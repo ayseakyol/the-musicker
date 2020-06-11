@@ -1,5 +1,5 @@
 # the-musicker
-node full stack
+sqlite - node full stack
 
 A static web page for rhythmic expression built with HTML, CSS, JavaScript & Node.
 
