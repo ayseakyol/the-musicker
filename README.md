@@ -1,13 +1,15 @@
 # the-musicker
+
 sqlite - node full stack
 
-A static web page for rhythmic expression built with HTML, CSS, JavaScript & Node.
+A static web page for sqlite database built with HTML, CSS, JavaScript & Node.
 
 It looks something like this:
 
 [![the musicker screen shot](./musicker.png)](https://github.com/ayseakyol/the-musicker)
 
 ---
+
 2- Another Screen Shot:
 
 [![the musicker screen shot](./musicker2.png)](https://github.com/ayseakyol/the-musicker)
@@ -19,7 +21,8 @@ It looks something like this:
 Studying this project I learned about:
 
 - Node
-- Working with `sqlite` data(getAll, getOne, create, update, delete)
+- Communicate with SQLite databases in JavaScript
+- Working with `SQLite` data(getAll, getOne, create, update, delete)
 - Making full stack project
 
 This resource was very helpful:
@@ -29,5 +32,5 @@ This resource was very helpful:
 This app can be used to see the tables of `chinook queries`.
 
 I wrote an API that allows users to create, update, and delete rows in `sqlite table`.
-  
+
 At the end I prepared frontend of this app with using `form action and method`. Also I used `bootstrap modal` to prepare update, delete, read one row of tables.
