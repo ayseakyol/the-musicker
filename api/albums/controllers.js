@@ -14,9 +14,9 @@ const controllers = {
     });
   },
   getOne: (req, res) => {
-    const id = Number(req.params.id);
+    const id = parseInt(req.body.AlbumId);
 
-    const sql = `SELECT * FROM albums WHERE  AlbumId = '${id}'`;
+    const sql = `SELECT * FROM albums WHERE  AlbumId = ${id}`;
 
     db.get(sql, (err, row) => {
       if (err) {
@@ -44,12 +44,13 @@ const controllers = {
         return;
       }
 
-      res.json("The album is successfully added.");
+      //res.json("The album is successfully added.");
+      res.redirect("/");
     });
   },
   update: (req, res) => {
     // read row data from body
-    const id = Number(req.params.id);
+    const id = Number(req.body.AlbumId);
     const Title = req.body.Title;
     const ArtistId = req.body.ArtistId;
 
@@ -64,11 +65,12 @@ const controllers = {
         return;
       }
 
-      res.json("The album is successfully changed.");
+      //res.json("The album is successfully changed.");
+      res.redirect("/");
     });
   },
   delete: (req, res) => {
-    const id = Number(req.params.id);
+    const id = Number(req.body.AlbumId);
 
     const sql = `DELETE FROM albums
     WHERE AlbumId = '${id}'`;
@@ -79,7 +81,8 @@ const controllers = {
         return;
       }
 
-      res.json("The album is successfully deleted.");
+      //res.json("The album is successfully deleted.");
+      res.redirect("/");
     });
   },
 };

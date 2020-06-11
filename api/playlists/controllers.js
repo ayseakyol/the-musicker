@@ -14,7 +14,7 @@ const controllers = {
     });
   },
   getOne: (req, res) => {
-    const id = Number(req.params.id);
+    const id = Number(req.body.PlaylistId);
 
     const sql = `SELECT * FROM playlists WHERE  PlaylistId = '${id}'`;
 
@@ -41,30 +41,30 @@ const controllers = {
         res.status(400).json({ error: err.message });
         return;
       }
-
-      res.json("The playlist is successfully added.");
+      //res.json("The playlist is successfully added.")
+      res.redirect("/playlists.html");
     });
   },
   update: (req, res) => {
     // read row data from body
-    const id = Number(req.params.id);
+    const id = Number(req.body.PlaylistId);
     const Name = req.body.Name;
 
     const sql = `UPDATE playlists
                  SET Name = '${Name}'
-                 WHERE PlaylistId = '${id}' `;
+                 WHERE PlaylistId = ${id} `;
 
     db.run(sql, (err, msg) => {
       if (err) {
         res.status(400).json({ error: err.message });
         return;
       }
-
-      res.json("The playlist is successfully changed.");
+      res.redirect("/playlists.html");
+      //res.json("The playlist is successfully changed.");
     });
   },
   delete: (req, res) => {
-    const id = Number(req.params.id);
+    const id = Number(req.body.PlaylistId);
 
     const sql = `DELETE FROM playlists
     WHERE PlaylistId = '${id}'`;
@@ -74,8 +74,8 @@ const controllers = {
         res.status(400).json({ error: err.message });
         return;
       }
-
-      res.json("The playlist is successfully deleted.");
+      res.redirect("/playlists.html");
+      //res.json("The playlist is successfully deleted.");
     });
   },
 };

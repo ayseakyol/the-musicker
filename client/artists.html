@@ -20,55 +20,53 @@
 
   <body>
     <nav class="navbar navbar-light bg-light justify-content-start">
-      <a class="nav-item nav-link active" href="./index.html">Albums </a>
-      <a class="nav-item nav-link" href="./artists.html">Artists</a>
+      <a class="nav-item nav-link" href="./index.html">Albums </a>
+      <a class="nav-item nav-link active" href="./artists.html">Artists</a>
       <a class="nav-item nav-link" href="./playlists.html">Playlists</a>
     </nav>
     <header class="jumbotron text-center">
       <h1 class="display-4 text-center">
         <i class="fas fa-music text-primary"></i>
         The
-        <span class="text-primary">Musicker</span>Albums
+        <span class="text-primary">Musicker</span>Artists
       </h1>
     </header>
 
     <!-- this is the main div -->
     <div class="container bg-light pb-5">
-      <!-- first form for add an album-->
+      <!-- first form for add an artist-->
       <div class="col-12">
-        <form action="/api/albums" method="POST">
-          <label for="Title">Album Name</label>
-          <input name="Title" type="text" class="form-control" />
-          <label for="ArtistId">Artist ID</label>
-          <input name="ArtistId" type="number" class="form-control" />
+        <form action="/api/artists" method="POST">
+          <label for="Name">Artist Name</label>
+          <input name="Name" type="text" class="form-control" />
           <button type="submit" class="btn btn-primary btn-block mt-4">
-            Add an album
+            Add an Artist
           </button>
         </form>
       </div>
 
-      <!-- modal content to see one album-->
+      <!-- modal content to see one artist-->
       <div class="col-12 mt-3">
         <div id="viewModal" class="modal fade" role="dialog">
           <div class="modal-dialog modal-lg" role="content">
             <div class="modal-content">
               <div class="modal-header">
-                <h4 class="modal-title">Choose The Specific Album</h4>
+                <h4 class="modal-title">Choose The Specific Artist</h4>
                 <button type="button" class="close" data-dismiss="modal">
                   &times;
                 </button>
               </div>
               <div class="modal-body">
-                <form action="/api/albums/view" method="POST">
+                <form action="/api/artists/view" method="POST">
                   <div class="form-group row">
-                    <label for="AlbumId" class="col-sm-2 col-form-label"
-                      >The Specific Album ID</label
+                    <label for="ArtistId" class="col-sm-2 col-form-label"
+                      >The Specific Artist ID</label
                     >
                     <div class="col-sm-10">
                       <input
                         type="number"
                         class="form-control"
-                        name="AlbumId"
+                        name="ArtistId"
                       />
                     </div>
                   </div>
@@ -99,49 +97,41 @@
             class="btn btn-block btn-info text-white"
             data-toggle="modal"
             data-target="#viewModal"
-            >Choose The Specific Album</a
+            >Choose The Specific Artist</a
           >
         </div>
       </div>
-      <!-- modal content to change one album-->
+      <!-- modal content to change one artist-->
       <div class="col-12 mt-3">
         <div id="changeModal" class="modal fade" role="dialog">
           <div class="modal-dialog modal-lg" role="content">
             <div class="modal-content">
               <div class="modal-header">
-                <h4 class="modal-title">Change The Album</h4>
+                <h4 class="modal-title">Change The Artist</h4>
                 <button type="button" class="close" data-dismiss="modal">
                   &times;
                 </button>
               </div>
               <div class="modal-body">
-                <form action="/api/albums/change" method="POST">
+                <form action="/api/artists/change" method="POST">
                   <div class="form-group row">
-                    <label for="AlbumId" class="col-sm-2 col-form-label"
-                      >The Album ID</label
+                    <label for="ArtistId" class="col-sm-2 col-form-label"
+                      >The Artist ID</label
                     >
                     <div class="col-sm-10">
                       <input
                         type="number"
                         class="form-control"
-                        name="AlbumId"
+                        name="ArtistId"
                       />
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="Title" class="col-sm-2 col-form-label"
-                      >Album Name</label
+                    <label for="Name" class="col-sm-2 col-form-label"
+                      >Artist Name</label
                     >
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="Title" />
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="ArtistId" class="col-sm-2 col-form-label"
-                      >Artist Id</label
-                    >
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="ArtistId" />
+                      <input type="text" class="form-control" name="Name" />
                     </div>
                   </div>
                   <div class="row">
@@ -170,32 +160,32 @@
             class="btn btn-block btn-info text-white"
             data-toggle="modal"
             data-target="#changeModal"
-            >Change The Album</a
+            >Change The Artist</a
           >
         </div>
       </div>
-      <!-- this is the modal form to delete album -->
+      <!-- this is the modal form to delete application -->
       <div class="col-12 mt-3">
         <div id="deleteModal" class="modal fade" role="dialog">
           <div class="modal-dialog modal-lg" role="content">
             <div class="modal-content">
               <div class="modal-header">
-                <h4 class="modal-title">Delete The Album</h4>
+                <h4 class="modal-title">Delete The Artist</h4>
                 <button type="button" class="close" data-dismiss="modal">
                   &times;
                 </button>
               </div>
               <div class="modal-body">
-                <form action="/api/albums/delete" method="POST">
+                <form action="/api/artists/delete" method="POST">
                   <div class="form-group row">
-                    <label for="AlbumId" class="col-sm-2 col-form-label"
-                      >The Album ID</label
+                    <label for="ArtistId" class="col-sm-2 col-form-label"
+                      >The Artist ID</label
                     >
                     <div class="col-sm-10">
                       <input
                         type="number"
                         class="form-control"
-                        name="AlbumId"
+                        name="ArtistId"
                       />
                     </div>
                   </div>
@@ -225,7 +215,7 @@
             class="btn btn-block btn-info text-white"
             data-toggle="modal"
             data-target="#deleteModal"
-            >Delete The Album</a
+            >Delete The Artist</a
           >
         </div>
 
@@ -233,9 +223,8 @@
           <table id="tbl" class="table table-bordered">
             <thead>
               <tr>
-                <th scope="col">Album ID</th>
-                <th scope="col">Title</th>
                 <th scope="col">Artist ID</th>
+                <th scope="col">Artist Name</th>
               </tr>
             </thead>
           </table>
@@ -259,6 +248,6 @@
       ></script>
     </div>
 
-    <script src="./app/albums/init.js"></script>
+    <script src="./app/artists/init.js"></script>
   </body>
 </html>
