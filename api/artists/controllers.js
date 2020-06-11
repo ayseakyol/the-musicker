@@ -14,7 +14,7 @@ const controllers = {
     });
   },
   getOne: (req, res) => {
-    const id = Number(req.params.id);
+    const id = Number(req.body.ArtistId);
 
     const sql = `SELECT * FROM artists WHERE  ArtistId = '${id}'`;
 
@@ -42,12 +42,13 @@ const controllers = {
         return;
       }
 
-      res.json("The artist is successfully added.");
+      //res.json("The artist is successfully added.");
+      res.redirect("/artists.html");
     });
   },
   update: (req, res) => {
     // read row data from body
-    const id = Number(req.params.id);
+    const id = Number(req.body.ArtistId);
     const Name = req.body.Name;
 
     const sql = `UPDATE artists
@@ -60,11 +61,12 @@ const controllers = {
         return;
       }
 
-      res.json("The artist is successfully changed.");
+      //res.json("The artist is successfully changed.");
+      res.redirect("/artists.html");
     });
   },
   delete: (req, res) => {
-    const id = Number(req.params.id);
+    const id = Number(req.params.ArtistId);
 
     const sql = `DELETE FROM artists
     WHERE ArtistId = '${id}'`;
@@ -75,7 +77,8 @@ const controllers = {
         return;
       }
 
-      res.json("The artist is successfully deleted.");
+      //res.json("The artist is successfully deleted.");
+      res.redirect("/artists.html");
     });
   },
 };
