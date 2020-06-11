@@ -24,7 +24,7 @@ Studying this project I learned about:
 
 This resource was very helpful:
 
-SQLite starts: https://www.youtube.com/watch?v=2PCaD0Y4MP4&list=PLzV58Zm8FuBIWu1zvGRUfn0Xh6HXRg9cG&index=7
+[SQLite starts:](https://www.youtube.com/watch?v=2PCaD0Y4MP4&list=PLzV58Zm8FuBIWu1zvGRUfn0Xh6HXRg9cG&index=7)
 
 This app can be used to see the tables of `chinook queries`.
 
