@@ -6,6 +6,10 @@ A static web page for rhythmic expression built with HTML, CSS, JavaScript & Nod
 It looks something like this:
 
 [![the musicker screen shot](./musicker.png)](https://github.com/ayseakyol/the-musicker)
+
+---
+2- Another Screen Shot:
+
 [![the musicker screen shot](./musicker2.png)](https://github.com/ayseakyol/the-musicker)
 
 ---
