@@ -22,13 +22,13 @@ const controllers = {
      INNER JOIN Tracks t ON pt.TrackId = t.TrackId
      WHERE  p.PlaylistId = '${id}'`;
 
-    db.all(sql, (err, row) => {
+    db.all(sql, (err, rows) => {
       if (err) {
         res.status(400).json({ error: err.message });
         return;
       }
 
-      res.json(row);
+      res.json(JSON.stringify(rows));
     });
   },
   create: (req, res) => {
