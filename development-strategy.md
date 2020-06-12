@@ -27,7 +27,17 @@ Building this site one step at a time
 
 ---
 
-## 4. User Story: Heroku
+## 4. User Story: Front-End For Join
+
+A user can click on one artist to see all the albums by that artist, with the songs for each album listed.
+A user can click on one album to see all the albums by that artist, with the songs for each album listed.
+A user can click on one playlist to see all songs in that playlist.
+
+- Add the `join` functions to get all data about the query which the user wants to see.
+
+---
+
+## 5. User Story: Heroku
 
 **A user can see the page on the internet.**
 
