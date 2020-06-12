@@ -16,9 +16,13 @@ const controllers = {
   getOne: (req, res) => {
     const id = Number(req.body.ArtistId);
 
-    const sql = `SELECT * FROM artists WHERE  ArtistId = '${id}'`;
+    const sql = `SELECT a.ArtistId, a.Name AS ArtistName, al.AlbumId, al.Title AS AlbumTitle, t.Name AS TrackName, t.composer
+    FROM Artists a
+    LEFT JOIN Albums al ON a.ArtistId = al.ArtistId
+    LEFT JOIN Tracks t ON t.AlbumId = al.AlbumId
+    WHERE  a.ArtistId = '${id}'`;
 
-    db.get(sql, (err, row) => {
+    db.all(sql, (err, row) => {
       if (err) {
         res.status(400).json({ error: err.message });
         return;

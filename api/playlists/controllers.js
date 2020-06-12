@@ -16,9 +16,13 @@ const controllers = {
   getOne: (req, res) => {
     const id = Number(req.body.PlaylistId);
 
-    const sql = `SELECT * FROM playlists WHERE  PlaylistId = '${id}'`;
+    const sql = `SELECT p.playlistId, p.Name as PlaylistName, pt.trackId, t.Name as TrackName, t.composer
+     FROM playlists p
+     INNER JOIN Playlist_track pt ON p.playlistId = pt.playlistId
+     INNER JOIN Tracks t ON pt.TrackId = t.TrackId
+     WHERE  p.PlaylistId = '${id}'`;
 
-    db.get(sql, (err, row) => {
+    db.all(sql, (err, row) => {
       if (err) {
         res.status(400).json({ error: err.message });
         return;
